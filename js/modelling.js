@@ -284,7 +284,7 @@ debug("start");
                    }
                    var aJSON = getQueryVariable("url");
                    if(aJSON != "") {
-                       loadJSON(aJSON);
+                       ModelStorage.loadJSON(aJSON);
                    }
                }
 
