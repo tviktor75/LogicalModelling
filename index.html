@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <title>Logical Model Diagrams v0.7beta</title>
+    <link rel="stylesheet" type="text/css" href="./css/ext-all.css">
+
+
+
+
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <title>Open-jACOB Draw2D :: ResizeImage</title>
+        <!-- common, all times required, imports -->
+        <script type="text/javascript" src="js/wz_jsgraphics.js"></script>             
+				<script type="text/javascript" src="js/draw2d.js"></script>
+
+        <!-- demo specific imports -->
+	<script src="js/ResizeImage.js"></script>
+	<script src="js/ContextmenuConnection.js"></script>
+	<script src="js/MyInputPort.js"></script>
+	<script src="js/MyOutputPort.js"></script>
+	<script src="js/JSONSerializer.js"></script>
+	<script src="js/DiagramFigure.js"></script>
+  <script type="text/javascript" src="adapter/prototype/prototype.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/xtheme-aero.css">
+  <script type="text/javascript" src="adapter/yui/yui-utilities.js"></script>
+  <script type="text/javascript" src="adapter/yui/ext-yui-adapter.js"></script>
+
+
+  <script type="text/javascript" src="js/ext-all.js"></script>
+		
+  <script type="text/javascript" src="js/BlobBuilder.min.js"></script>
+  <script type="text/javascript" src="js/FileSaver.min.js"></script>
+  <script type="text/javascript" src="js/storage.js"></script>
+
+</head>
+<body>
+  <div id="center3" class="x-layout-active-content">
+      <h1>URL to load the topology from</h1>
+      <input type="text" id="json_load_url" size="80">
+			<input type="button" value="Save to URL" onclick="ModelStorage.doSaveJSONtoFile()">
+      <input type="button" id="fakeload" value="Load from URL">
+			<input type="button" value="Restore" onclick="ModelStorage.restoreBlocks()">
+			<input type="file" id="localLoad" style="display: none;">
+	</div>
+  <div id="library_div">
+       <p><a href="javascript:ModelStorage.loadJSON('eerm.json');">eerm demo</a></p>
+			 <p><a href="javascript:ModelStorage.loadJSON('aris.json');">aris demo</a></p>
+       <hr size="1" noshade="">
+  </div>
+	<div id="icons_div_aris"></div>
+	<div id="icons_div_eerm"></div>
+	
+  <div id="center1" class="x-layout-active-content">
+      <div id="paintarea" style="position:relative;width:3000px;height:3000px;"></div>
+  </div>
+  <div id="center2" class="x-layout-active-content">
+	<h1>How to use</h1>
+	Drag and drop. Connect the blue dots with lines. <br>Doubleclick to add the annotations. 
+	Control-drag the blue dots to clone them. Click on the text links in the "library" to add the icons to the "Icons" tab.
+	"Save" the JSON into the textbox. "Load" JSON from the textbox. Also you can have the JSON on a server and you can "load" it from an URL, like <a href="?url=test.json">this</a>
+
+  <hr size="1" noshade="">
+	<h1>About</h1>
+	
+        <p>
+	This little hack is standing on the shoulders of giants: 
+        </p><ul>
+	<li><a href="http://draw2d.org/">Draw2D library</a></li>
+	<li><a href="http://www.walterzorn.com/">Walter Zorn's JS graphics library</a></li>
+        <li><a href="http://extjs.com/">ExtJS library</a></li>
+	</ul>
+	<p></p>
+      <hr size="1" noshade="">
+        The few kilobytes of glue code to make this working together written by Andrew Yourtchenko a while ago in a few evenings.
+I've done this mainly because I wanted to try and see what happens and how it looks like. 
+There are still quite a few relatively cosmetic bugs, but I consider it working "good enough", so most probably won't fix them. If you find something and fix it, feel free to send me the diff to ayourtch [at] gmail, and I'll put it in.
+      <hr size="1" noshade="">
+I deliberately coded it in such a way that after the initial loading everything runs only on the client. In any case, if you prefer to be on the safe side, you can download the <a href="../network.tgz">tarball</a> and run it locally.
+      <hr size="1" noshade="">
+      <hr size="1" noshade="">
+  </div>
+
+  <div id="debug"></div>
+<script type="text/javascript" src="js/modelling.js"></script>
+<script src="index.html.0.js"></script>
+<script src="index.html.1.js"></script>
+
+
+</body></html>
